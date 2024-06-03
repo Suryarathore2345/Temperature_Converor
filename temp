@@ -1,0 +1,48 @@
+while True:
+    print("\n------------------Temperature Converter----------------")
+    print("Select the conversion type:")
+    print("1. Celsius to Fahrenheit")
+    print("2. Celsius to Kelvin")
+    print("3. Fahrenheit to Celsius")
+    print("4. Fahrenheit to Kelvin")
+    print("5. Kelvin to Celsius")
+    print("6. Kelvin to Fahrenheit")
+    print("7. Exit")
+    
+    choice = input("Enter your choice for Conversion : ")
+    
+    if choice == "7":
+        print("Exiting the converter......Thank You for Using Converter")
+        break
+
+    try:
+        temperature = float(input("Enter the temperature to be converted: "))
+
+        if choice == "1":
+            # Celsius to Fahrenheit
+            result = (temperature * 9/5) + 32
+            print(str(temperature) + "°C is equal to " + str(result) + "°F")
+        elif choice == "2":
+            # Celsius to Kelvin
+            result = temperature + 273.15
+            print(str(temperature) + "°C is equal to " + str(result) + "K")
+        elif choice == "3":
+            # Fahrenheit to Celsius
+            result = (temperature - 32) * 5/9
+            print(str(temperature) + "°F is equal to " + str(result) + "°C")
+        elif choice == "4":
+            # Fahrenheit to Kelvin
+            result = (temperature - 32) * 5/9 + 273.15
+            print(str(temperature) + "°F is equal to " + str(result) + "K")
+        elif choice == "5":
+            # Kelvin to Celsius
+            result = temperature - 273.15
+            print(str(temperature) + "K is equal to " + str(result) + "°C")
+        elif choice == "6":
+            # Kelvin to Fahrenheit
+            result = (temperature - 273.15) * 9/5 + 32
+            print(str(temperature) + "K is equal to " + str(result) + "°F")
+        else:
+            print("Invalid choice. Please select a valid option.")
+    except ValueError:
+        print("Invalid input. Please enter a numerical value for the temperature.")
